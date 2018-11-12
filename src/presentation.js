@@ -19,6 +19,7 @@ import physicalServer from './assets/physical-server.jpg';
 import graphqlLogo from './assets/graphql-logo.png';
 import graphTheory from './assets/graph-theory.png';
 import restResponse from './assets/rest-response.png';
+import networkCommunication from './assets/network-communication.jpeg';
 
 require('normalize.css');
 
@@ -177,7 +178,7 @@ export default class Presentation extends Component {
           <Heading size={3} textColor="tertiary">
             Communication layer
           </Heading>
-
+          <Image src={networkCommunication} />
           <List>
             <Appear>
               <ListItem size={30}>Internet - TCP/IP, sockets</ListItem>
@@ -307,7 +308,7 @@ export default class Presentation extends Component {
 
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
-            REST advantages
+            REST advantages 👍
           </Heading>
 
           <List>
@@ -333,8 +334,8 @@ export default class Presentation extends Component {
         </Slide>
 
         <Slide transition={['fade']}>
-          <Heading size={3} textColor="tertiary">
-            REST disadvantages
+          <Heading size={4} textColor="tertiary">
+            REST disadvantages 👎
           </Heading>
 
           <List>
@@ -381,7 +382,7 @@ export default class Presentation extends Component {
           </Appear>
           <Appear>
             <Heading size={4} textColor="tertiary">
-              on steroids
+              on steroids 💪
             </Heading>
           </Appear>
         </Slide>
@@ -512,7 +513,7 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={['fade']}>
           <Heading size={4} textColor="tertiary">
-            Benefits for developers
+            Benefits for developers 👍
           </Heading>
           <List>
             <Appear>
@@ -539,7 +540,7 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
-            Benefits for clients
+            Benefits for clients 👍
           </Heading>
           <List>
             <Appear>
@@ -561,7 +562,7 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
-            Disadvantages of GraphQL
+            Disadvantages of GraphQL 👎
           </Heading>
           <List>
             <Appear>
@@ -608,7 +609,7 @@ export default class Presentation extends Component {
               </ListItem>
             </Appear>
             <Appear>
-              <ListItem size={30}>Complicated set-up - consult senior</ListItem>
+              <ListItem size={30}>Complex set-up - consult senior</ListItem>
             </Appear>
           </List>
         </Slide>
