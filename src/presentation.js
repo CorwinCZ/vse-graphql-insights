@@ -17,8 +17,8 @@ const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022', // Black
-    quarternary: '#CECECE', // Gray
     tertiary: '#03A9FC', // Blue
+    quarternary: '#CECECE', // Gray
   },
   {
     primary: 'Montserrat',
@@ -45,6 +45,12 @@ export default class Presentation extends Component {
           </Text>
         </Slide>
 
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={3} textColor="primary">
+            {`Some termites 🐜 to start with`}
+          </Heading>
+        </Slide>
+
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
             {`Client ↔️ Server`}
@@ -52,14 +58,14 @@ export default class Presentation extends Component {
           <Image src={clientServerModel} />
         </Slide>
 
-        <Slide transition={['fade']}>
-          <Heading size={3} textColor="tertiary">
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={3} textColor="primary">
             Client
           </Heading>
 
           <List>
-            {this.renderAppearListItem(`Desktop with browser`)}
-            {this.renderAppearListItem(`Mobile / tablet`)}
+            {this.renderAppearListItem(`Desktop with browser 🖥️`)}
+            {this.renderAppearListItem(`Mobile / tablet 📱`)}
             {this.renderAppearListItem(`IoT device`)}
             {this.renderAppearListItem(`Another server :) `)}
           </List>
@@ -73,15 +79,15 @@ export default class Presentation extends Component {
           <List>
             {this.renderAppearListItem(`How the application looks - UI`)}
             {this.renderAppearListItem(`How is the application used - UX`)}
-            {this.renderAppearListItem(`Handle user interaction`)}
-            {this.renderAppearListItem(`Provides data and actions on data to user`)}
+            {this.renderAppearListItem(`Handle user interaction 🧔`)}
+            {this.renderAppearListItem(`Provides data 💾 and actions on data to user`)}
             {this.renderAppearListItem(`Perform CRUD operations with server`)}
             {this.renderAppearListItem(`Create Read, Update, Delete`)}
           </List>
         </Slide>
 
-        <Slide transition={['fade']}>
-          <Heading size={3} textColor="tertiary">
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={3} textColor="primary">
             Server
           </Heading>
           <Image src={physicalServer} />
@@ -99,20 +105,20 @@ export default class Presentation extends Component {
           <List>
             {this.renderAppearListItem(`Provide CRUD capabilities for clients`)}
             {this.renderAppearListItem(`Handle security & authentication & authorization`)}
-            {this.renderAppearListItem(`Handle data operations and storage`)}
+            {this.renderAppearListItem(`Handle data 💾 operations and storage`)}
           </List>
         </Slide>
 
-        <Slide transition={['fade']}>
-          <Heading size={3} textColor="tertiary">
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={3} textColor="primary">
             Server and Client
           </Heading>
           <List>
             {this.renderAppearListItem(`Are not directly connected`)}
             {this.renderAppearListItem(`N:M relation`)}
             {this.renderAppearListItem(`One server provides for multiple clients`)}
-            {this.renderAppearListItem(`One client consumes data from multiple servers`)}
-            {this.renderAppearListItem(`Each has different job`)}
+            {this.renderAppearListItem(`One client consumes data 💾 from multiple servers`)}
+            {this.renderAppearListItem(`Each has different job 🔨`)}
           </List>
         </Slide>
 
@@ -128,15 +134,20 @@ export default class Presentation extends Component {
             {this.renderAppearListItem(`Proprietary protocols / hardware`)}
           </List>
         </Slide>
+        {/** REST start */}
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={3} textColor="primary">
+            REST API
+          </Heading>
+          <Heading size={5} textColor="primary">
+            Representational state transfer
+          </Heading>
+        </Slide>
 
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
-            REST API
+            REST
           </Heading>
-          <Heading size={5} textColor="tertiary">
-            Representational state transfer
-          </Heading>
-
           <List>
             {this.renderAppearListItem(`Designed on top of TCP/IP protocol`)}
             {this.renderAppearListItem(`Uses HTTP methods - GET, POST, PUT, PATCH, DELETE`)}
@@ -175,9 +186,9 @@ export default class Presentation extends Component {
 
           <List>
             {this.renderAppearListItem(`Server is in charge of:`)}
-            {this.renderAppearListItem(`What data are provided`)}
-            {this.renderAppearListItem(`What data can be mutated - content of endpoitns`)}
-            {this.renderAppearListItem(`How the client accesses the data - endpoints`)}
+            {this.renderAppearListItem(`What data 💾 are provided`)}
+            {this.renderAppearListItem(`What data 💾 can be mutated - content of endpoitns`)}
+            {this.renderAppearListItem(`How the client accesses the data 💾 - endpoints`)}
             {this.renderAppearListItem(`How the response is shaped`)}
           </List>
         </Slide>
@@ -217,8 +228,8 @@ export default class Presentation extends Component {
           <List>
             {this.renderAppearListItem(`Locked to TCP/IP protocol`)}
             {this.renderAppearListItem(`Loose specification - each REST API is different`)}
-            {this.renderAppearListItem(`Hard to build automated tools`)}
-            {this.renderAppearListItem(`Requires multiple endpoints hits to get all data`)}
+            {this.renderAppearListItem(`Hard to build automated tools 🔨`)}
+            {this.renderAppearListItem(`Requires multiple endpoints hits to get all data 💾`)}
             {this.renderAppearListItem(`Tight coupling between client and server`)}
             {this.renderAppearListItem(`
                 Hard to write documentation => bad quality of documentation
@@ -226,6 +237,25 @@ export default class Presentation extends Component {
           </List>
         </Slide>
 
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={4} textColor="primary">
+            You have a nice learning opportunity
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="tertiary" textColor="primary" transition={['fade']}>
+          <Heading size={4} textColor="primary">
+            3 projects, 2-3 implementation of each
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="secondary" textColor="primary" transition={['fade']}>
+          <Heading size={4} textColor="primary">
+            Use it!
+          </Heading>
+        </Slide>
+
+        {/** GRAPHQL start */}
         <Slide transition={['fade']}>
           <Image src={graphqlLogo} />
         </Slide>
@@ -294,13 +324,13 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            {this.renderAppearListItem(`Strongly typed`)}
+            {this.renderAppearListItem(`Strongly typed 💪`)}
             {this.renderAppearListItem(`You get only what you asked for`)}
             {this.renderAppearListItem(`Decouples server and client app`)}
-            {this.renderAppearListItem(`Open-source with big community`)}
+            {this.renderAppearListItem(`Open-source with big community 👯`)}
             {this.renderAppearListItem(`Field level errors`)}
-            {this.renderAppearListItem(`Subscriptions - real life data`)}
-            {this.renderAppearListItem(`Great number of tools`)}
+            {this.renderAppearListItem(`Subscriptions - real life data 💾`)}
+            {this.renderAppearListItem(`Great number of tools 🧰`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -313,13 +343,15 @@ export default class Presentation extends Component {
             {this.renderAppearListItem(`Prisma`)}
             {this.renderAppearListItem(`GraphQL Faker`)}
             {this.renderAppearListItem(`GraphiQL & GraphQL playground`)}
-            {this.renderAppearListItem(`GraphQL bindings & schema stitching`)}
+            {this.renderAppearListItem(`GraphQL bindings, schema stitching & Apollo Federation`)}
             {this.renderAppearListItem(`Editor plugins`)}
-            {this.renderAppearListItem(`
+            <Appear>
+              <ListItem>
                 <Link href="https://github.com/chentsulin/awesome-graphql">
                   GitHub - awesome GraphQL
                 </Link>
-              `)}
+              </ListItem>
+            </Appear>
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -332,7 +364,7 @@ export default class Presentation extends Component {
             {this.renderAppearListItem(`Automatic documentation`)}
             {this.renderAppearListItem(`API introspection and self-discovery`)}
             {this.renderAppearListItem(`Enables rapid prototyping`)}
-            {this.renderAppearListItem(`Tools!`)}
+            {this.renderAppearListItem(`Tools! 🧰`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -352,7 +384,7 @@ export default class Presentation extends Component {
             Disadvantages of GraphQL 👎
           </Heading>
           <List>
-            {this.renderAppearListItem(`Bigger complexity on start`)}
+            {this.renderAppearListItem(`~ Bigger complexity on start (in learning)`)}
             {this.renderAppearListItem(`More work beforehand`)}
             {this.renderAppearListItem(`Recursive queries`)}
             {this.renderAppearListItem(`File handling requires extra work / libraries`)}
@@ -362,16 +394,35 @@ export default class Presentation extends Component {
 
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
-            What to use?
+            When to use?
           </Heading>
           <List>
             {this.renderAppearListItem(`New private API server - GraphQL`)}
-            {this.renderAppearListItem(`New public API server - REST + GraphQL`)}
+            {this.renderAppearListItem(`New public API server - GraphQL + REST`)}
             {this.renderAppearListItem(`Existing REST server - keep using REST and`)}
             {this.renderAppearListItem(`watch for problems - if they occur, consider migration`)}
             {this.renderAppearListItem(`Complex set-up - consult senior`)}
           </List>
         </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading size={3} textColor="tertiary">
+            GraphQL in prod for ~year
+          </Heading>
+          <List>
+            {this.renderAppearListItem(`Technology with least ammount of problems`)}
+            {this.renderAppearListItem(`TOOLS! 💕`)}
+            {this.renderAppearListItem(`Automatic documentation! 💕`)}
+            {this.renderAppearListItem(
+              `Removed huge ammount of (miss)communication between FE ↔️ BE`,
+            )}
+            {this.renderAppearListItem(
+              `Not a big difference to explain GraphQL x REST to junior dev`,
+            )}
+            {this.renderAppearListItem(`Needs more best-practises articles on web 🕸️`)}
+          </List>
+        </Slide>
+
         <Slide transition={['fade']}>
           <Heading size={3} textColor="tertiary">
             Q&A
