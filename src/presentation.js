@@ -150,7 +150,7 @@ export default class Presentation extends Component {
           </Heading>
           <List>
             {this.renderAppearListItem(`Designed on top of TCP/IP protocol`)}
-            {this.renderAppearListItem(`Uses HTTP methods - GET, POST, PUT, PATCH, DELETE`)}
+            {this.renderAppearListItem(`Uses HTTP(S) methods - GET, POST, PUT, PATCH, DELETE`)}
             {this.renderAppearListItem(`Oriented around resources`)}
             {this.renderAppearListItem(`
                 Designed to provide CRUD capabilities on demand / request
