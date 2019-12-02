@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 
-import {
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Slide,
-  Text,
-  Appear,
-  Link,
-  Image,
-} from 'spectacle';
+import { Deck, Heading, ListItem, List, Slide, Text, Appear, Link, Image } from 'spectacle';
 
 import createTheme from 'spectacle/lib/themes/default';
 
@@ -36,9 +26,13 @@ const theme = createTheme(
   },
 );
 
-// TODO - delete this. TODO TODO TODO TODO
-
 export default class Presentation extends Component {
+  renderAppearListItem = inputString => (
+    <Appear>
+      <ListItem>{inputString}</ListItem>
+    </Appear>
+  );
+
   render() {
     return (
       <Deck transitionDuration={500} theme={theme}>
@@ -64,18 +58,10 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Desktop with browser</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Mobile / tablet</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>IoT device</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Another server :) </ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Desktop with browser`)}
+            {this.renderAppearListItem(`Mobile / tablet`)}
+            {this.renderAppearListItem(`IoT device`)}
+            {this.renderAppearListItem(`Another server :) `)}
           </List>
         </Slide>
 
@@ -85,26 +71,12 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>How the application looks - UI</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>How is the application used - UX</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Handle user interaction</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Provides data and actions on data to user
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Perform CRUD operations with server</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Create Read, Update, Delete</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`How the application looks - UI`)}
+            {this.renderAppearListItem(`How is the application used - UX`)}
+            {this.renderAppearListItem(`Handle user interaction`)}
+            {this.renderAppearListItem(`Provides data and actions on data to user`)}
+            {this.renderAppearListItem(`Perform CRUD operations with server`)}
+            {this.renderAppearListItem(`Create Read, Update, Delete`)}
           </List>
         </Slide>
 
@@ -114,15 +86,9 @@ export default class Presentation extends Component {
           </Heading>
           <Image src={physicalServer} />
           <List>
-            <Appear>
-              <ListItem size={30}>Physical or virtual server</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Application in container (Docker)</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Serverless application (AWS Lambda)</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Physical or virtual server`)}
+            {this.renderAppearListItem(`Application in container (Docker)`)}
+            {this.renderAppearListItem(`Serverless application (AWS Lambda)`)}
           </List>
         </Slide>
 
@@ -131,19 +97,9 @@ export default class Presentation extends Component {
             Server responsibility
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>
-                Provide CRUD capabilities for clients
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Handle security & authentication & authorization
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Handle data operations and storage</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Provide CRUD capabilities for clients`)}
+            {this.renderAppearListItem(`Handle security & authentication & authorization`)}
+            {this.renderAppearListItem(`Handle data operations and storage`)}
           </List>
         </Slide>
 
@@ -152,25 +108,11 @@ export default class Presentation extends Component {
             Server and Client
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>Are not directly connected</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>N:M relation</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                One server provides for multiple clients
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                One client consumes data from multiple servers
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Each has different job</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Are not directly connected`)}
+            {this.renderAppearListItem(`N:M relation`)}
+            {this.renderAppearListItem(`One server provides for multiple clients`)}
+            {this.renderAppearListItem(`One client consumes data from multiple servers`)}
+            {this.renderAppearListItem(`Each has different job`)}
           </List>
         </Slide>
 
@@ -180,20 +122,10 @@ export default class Presentation extends Component {
           </Heading>
           <Image src={networkCommunication} />
           <List>
-            <Appear>
-              <ListItem size={30}>Internet - TCP/IP, sockets</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Wired connection - USB, serial cables
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Wireless connection - bluetooth</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Proprietary protocols / hardware</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Internet - TCP/IP, sockets`)}
+            {this.renderAppearListItem(`Wired connection - USB, serial cables`)}
+            {this.renderAppearListItem(`Wireless connection - bluetooth`)}
+            {this.renderAppearListItem(`Proprietary protocols / hardware`)}
           </List>
         </Slide>
 
@@ -206,22 +138,12 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Designed on top of TCP/IP protocol</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Uses HTTP methods - GET, POST, PUT, PATCH, DELETE
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Oriented around resources</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
+            {this.renderAppearListItem(`Designed on top of TCP/IP protocol`)}
+            {this.renderAppearListItem(`Uses HTTP methods - GET, POST, PUT, PATCH, DELETE`)}
+            {this.renderAppearListItem(`Oriented around resources`)}
+            {this.renderAppearListItem(`
                 Designed to provide CRUD capabilities on demand / request
-              </ListItem>
-            </Appear>
+              `)}
           </List>
         </Slide>
 
@@ -231,17 +153,11 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>https://example.com/products</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>https://example.com/products/123</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
+            {this.renderAppearListItem(`https://example.com/products`)}
+            {this.renderAppearListItem(`https://example.com/products/123`)}
+            {this.renderAppearListItem(`
                 https://example.com/products?category=awesome&color=pink
-              </ListItem>
-            </Appear>
+              `)}
           </List>
         </Slide>
 
@@ -258,25 +174,11 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Server is in charge of:</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>What data are provided</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                What data can be mutated - content of endpoitns
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                How the client accesses the data - endpoints
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>How the response is shaped</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Server is in charge of:`)}
+            {this.renderAppearListItem(`What data are provided`)}
+            {this.renderAppearListItem(`What data can be mutated - content of endpoitns`)}
+            {this.renderAppearListItem(`How the client accesses the data - endpoints`)}
+            {this.renderAppearListItem(`How the response is shaped`)}
           </List>
         </Slide>
 
@@ -286,23 +188,11 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Client consumes REST API using</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Network calls - fetch, axios</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Multiple request on single page</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Doesn't have control over any aspect of response
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Unless specifically provided by API</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Client consumes REST API using`)}
+            {this.renderAppearListItem(`Network calls - fetch, axios`)}
+            {this.renderAppearListItem(`Multiple request on single page`)}
+            {this.renderAppearListItem(`Doesn't have control over any aspect of response`)}
+            {this.renderAppearListItem(`Unless specifically provided by API`)}
           </List>
         </Slide>
 
@@ -312,24 +202,10 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>
-                Simple and fast to start building it
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Widely used - tons of examples, materials, tools
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Build on top of TCP/IP layer</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Can be tailor-fitted for a specific client
-              </ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Simple and fast to start building it`)}
+            {this.renderAppearListItem(`Widely used - tons of examples, materials, tools`)}
+            {this.renderAppearListItem(`Build on top of TCP/IP layer`)}
+            {this.renderAppearListItem(`Can be tailor-fitted for a specific client`)}
           </List>
         </Slide>
 
@@ -339,32 +215,14 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Locked to TCP/IP protocol</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Loose specification - each REST API is different
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Hard to build automated tools</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Requires multiple endpoints hits to get all data
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Tight coupling between client and server
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
+            {this.renderAppearListItem(`Locked to TCP/IP protocol`)}
+            {this.renderAppearListItem(`Loose specification - each REST API is different`)}
+            {this.renderAppearListItem(`Hard to build automated tools`)}
+            {this.renderAppearListItem(`Requires multiple endpoints hits to get all data`)}
+            {this.renderAppearListItem(`Tight coupling between client and server`)}
+            {this.renderAppearListItem(`
                 Hard to write documentation => bad quality of documentation
-              </ListItem>
-            </Appear>
+              `)}
           </List>
         </Slide>
 
@@ -403,9 +261,7 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Uses Graph theory</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Uses Graph theory`)}
             <Appear>
               <Image src={graphTheory} />
             </Appear>
@@ -418,32 +274,17 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>
-                Describes nodes and relations between them
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Describes entry points to the graph</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Provides resulting graph as a API for clients
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Doesn't care about transfer method</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Describes nodes and relations between them`)}
+            {this.renderAppearListItem(`Describes entry points to the graph`)}
+            {this.renderAppearListItem(`Provides resulting graph as a API for clients`)}
+            {this.renderAppearListItem(`Doesn't care about transfer method`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
           <Heading size={1} textColor="secondary">
             DEMO
           </Heading>
-          <Link
-            href="https://eu1.prisma.sh/petr-canek-398ab8/interviewme-test/dev"
-            target="_blank"
-          >
+          <Link href="https://eu1.prisma.sh/petr-canek-398ab8/interviewme-test/dev" target="_blank">
             Playground
           </Link>
         </Slide>
@@ -453,27 +294,13 @@ export default class Presentation extends Component {
           </Heading>
 
           <List>
-            <Appear>
-              <ListItem size={30}>Strongly typed</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>You get only what you asked for</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Decouples server and client app</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Open-source with big community</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Field level errors</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Subscriptions - real life data</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Great number of tools</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Strongly typed`)}
+            {this.renderAppearListItem(`You get only what you asked for`)}
+            {this.renderAppearListItem(`Decouples server and client app`)}
+            {this.renderAppearListItem(`Open-source with big community`)}
+            {this.renderAppearListItem(`Field level errors`)}
+            {this.renderAppearListItem(`Subscriptions - real life data`)}
+            {this.renderAppearListItem(`Great number of tools`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -481,34 +308,18 @@ export default class Presentation extends Component {
             GraphQL tools
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>Relay / Apollo client</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Apollo server & graphql-yoga</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Prisma</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>GraphQL Faker</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>GraphiQL & GraphQL playground</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>GraphQL bindings & schema stitching</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Editor plugins</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
+            {this.renderAppearListItem(`Relay / Apollo client`)}
+            {this.renderAppearListItem(`Apollo server & graphql-yoga`)}
+            {this.renderAppearListItem(`Prisma`)}
+            {this.renderAppearListItem(`GraphQL Faker`)}
+            {this.renderAppearListItem(`GraphiQL & GraphQL playground`)}
+            {this.renderAppearListItem(`GraphQL bindings & schema stitching`)}
+            {this.renderAppearListItem(`Editor plugins`)}
+            {this.renderAppearListItem(`
                 <Link href="https://github.com/chentsulin/awesome-graphql">
                   GitHub - awesome GraphQL
                 </Link>
-              </ListItem>
-            </Appear>
+              `)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -516,26 +327,12 @@ export default class Presentation extends Component {
             Benefits for developers 👍
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>Easier API server development</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Easier API consumer app development</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Automatic documentation</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                API introspection and self-discovery
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Enables rapid prototyping</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Tools!</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Easier API server development`)}
+            {this.renderAppearListItem(`Easier API consumer app development`)}
+            {this.renderAppearListItem(`Automatic documentation`)}
+            {this.renderAppearListItem(`API introspection and self-discovery`)}
+            {this.renderAppearListItem(`Enables rapid prototyping`)}
+            {this.renderAppearListItem(`Tools!`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -543,21 +340,11 @@ export default class Presentation extends Component {
             Benefits for clients 👍
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>Faster development</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Smaller network requets</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Less network requets</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Less code -> less bugs</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Happy developers</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Faster development`)}
+            {this.renderAppearListItem(`Smaller network requets`)}
+            {this.renderAppearListItem(`Less network requets`)}
+            {this.renderAppearListItem(`Less code -> less bugs`)}
+            {this.renderAppearListItem(`Happy developers`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -565,23 +352,11 @@ export default class Presentation extends Component {
             Disadvantages of GraphQL 👎
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>Bigger complexity on start</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>More work beforehand</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Recursive queries</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                File handling requires extra work / libraries
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>No built-in versioning</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`Bigger complexity on start`)}
+            {this.renderAppearListItem(`More work beforehand`)}
+            {this.renderAppearListItem(`Recursive queries`)}
+            {this.renderAppearListItem(`File handling requires extra work / libraries`)}
+            {this.renderAppearListItem(`No built-in versioning`)}
           </List>
         </Slide>
 
@@ -590,27 +365,11 @@ export default class Presentation extends Component {
             What to use?
           </Heading>
           <List>
-            <Appear>
-              <ListItem size={30}>New private API server - GraphQL</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                New public API server - REST + GraphQL
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                Existing REST server - keep using REST and
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>
-                watch for problems - if they occur, consider migration
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem size={30}>Complex set-up - consult senior</ListItem>
-            </Appear>
+            {this.renderAppearListItem(`New private API server - GraphQL`)}
+            {this.renderAppearListItem(`New public API server - REST + GraphQL`)}
+            {this.renderAppearListItem(`Existing REST server - keep using REST and`)}
+            {this.renderAppearListItem(`watch for problems - if they occur, consider migration`)}
+            {this.renderAppearListItem(`Complex set-up - consult senior`)}
           </List>
         </Slide>
         <Slide transition={['fade']}>
@@ -621,17 +380,11 @@ export default class Presentation extends Component {
             Thank you for attention :)
           </Heading>
           <br />
-          <Link
-            href="https://github.com/CorwinCZ/vse-graphql-insights"
-            taget="_blank"
-          >
+          <Link href="https://github.com/CorwinCZ/vse-graphql-insights" taget="_blank">
             https://github.com/CorwinCZ/vse-graphql-insights
           </Link>
           <br />
-          <Link
-            href="http://vse-4it445-graphql-insights.surge.sh/"
-            taget="_blank"
-          >
+          <Link href="http://vse-4it445-graphql-insights.surge.sh/" taget="_blank">
             http://vse-4it445-graphql-insights.surge.sh/
           </Link>
         </Slide>
